@@ -1,29 +1,24 @@
-
 import Navbar from "../src/components/comp-577"
 import Footer from "../src/components/sections/footer/Footer"
+import MainContent from "../src/components/sections/Main"
+import "./index.css"
+
 
 
 function App() {
 
   return (
-    <div className = "flex flex-col min-h-screen">
-      <Navbar/>
-
-      {/* Screneshot / main attracion part*/}
-
-      {/* features cards */}
-
-      {/*Footer componetn */} 
-
-      <div className ="absolute bottom-0 left-0 right-0">
-        <Footer/>
-      </div>
+    <div className="flex flex-col min-h-screen">
+      
+      <Navbar />
+      <MainContent/>
 
 
-      <h1>Test</h1>
+      {/* Footer */}
+      <Footer />
+      
     </div>
-
-  )
+  );
 }
 
-export default App
+export default App;
