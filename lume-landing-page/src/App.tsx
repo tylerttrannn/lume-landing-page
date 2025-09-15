@@ -1,12 +1,14 @@
-import Component from '../src/components/comp-577'
+
+import Navbar from "../src/components/comp-577"
+
+
 
 function App() {
 
   return (
     <div>
-      <Component/> 
-
-
+      <Navbar/>
+      <h1>Test</h1>
     </div>
 
   )
