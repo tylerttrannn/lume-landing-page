@@ -1,11 +1,8 @@
 import Device from "../../assets/Device.png"
-import { AppStoreButton } from "react-mobile-app-button";
 import AppleLogo from "../../assets/apple.png"
 import { Button } from "../ui/button";
  
 function Main() {
-  const IOSUrl = "https://apps.apple.com/us/app/expo-go/id982107779";
-
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       
