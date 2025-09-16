@@ -15,7 +15,7 @@ function Features(){
         img: img2,
         title: "Smarter Blocking Tools",
         content:
-          "Build custom blocks to match your lifestyle—whether it’s Pomodoro focus sessions, time limits, or scheduled breaks.",
+          "Build custom blocks to match your lifestyle—whether it’s Pomodoro focus sessions, time limits, or adding a delay.",
       },
       {
         img: img3,
