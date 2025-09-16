@@ -1,5 +1,7 @@
 import Device from "../../assets/Device.png"
 import { AppStoreButton } from "react-mobile-app-button";
+import AppleLogo from "../../assets/apple.png"
+import { Button } from "../ui/button";
  
 function Main() {
   const IOSUrl = "https://apps.apple.com/us/app/expo-go/id982107779";
@@ -22,11 +24,10 @@ function Main() {
           </p>
 
           <div className="flex justify-center md:justify-start">
-            <AppStoreButton
-              url={IOSUrl}
-              theme="dark"
-              className="scale-110 hover:scale-115 transition-transform duration-200"
-            />
+            <Button size="lg" className="text-sm flex items-center gap-2">
+              <img src={AppleLogo} alt="Apple" className="max-h-4 w-auto" />
+              Download for iOS
+            </Button>
           </div>
         </div>
 

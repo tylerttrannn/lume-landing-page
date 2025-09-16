@@ -3,12 +3,12 @@ import Footer from "../src/components/sections/footer/Footer";
 import MainContent from "../src/components/sections/Main";
 import "./index.css";
 
-
-
 import img1 from "../src/assets/reason1.png";
 import img2 from "../src/assets/reason2.png";
 import img3 from "../src/assets/reason3.png";
+import AppleLogo from "../src/assets/apple.png"
 import { Card } from "./components/ui/card";
+import { Button } from "./components/ui/button";
 
 function App() {
   // Define the pricing plans
@@ -52,7 +52,7 @@ function App() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen mt-18">
+    <div className="flex flex-col min-h-screen ">
       <Navbar />
       <MainContent />
       
@@ -103,40 +103,37 @@ function App() {
 
       {/* Pricing model*/}
 
-<div className="flex flex-col justify-center items-center relative p-24">
-  <h2 className="text-4xl font-bold mb-12 text-center">Make Focusing Easier</h2>
+      <div className="flex flex-col justify-center items-center relative p-24">
+        <h2 className="text-4xl font-bold mb-12 text-center">Make Focusing Easier</h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-4">
-    {pricingPlans.map((plan, idx) => (
-      <Card
-        key={idx}
-        className="flex flex-col items-start text-left p-8 hover:scale-105 transition-transform duration-300 shadow-lg w-full"
-      >
-        <h3 className="text-2xl font-semibold mb-4">{plan.title}</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-4">
+          {pricingPlans.map((plan, idx) => (
+            <Card
+              key={idx}
+              className="flex flex-col items-start text-left p-8 hover:scale-105 transition-transform duration-300 shadow-lg w-full"
+            >
+              <h3 className="text-2xl font-semibold mb-4">{plan.title}</h3>
 
-        {/* Price + aside */}
-        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between w-full mb-4">
-          <div>
-            <p className="text-3xl font-bold">{plan.price}</p>
-            <p className="text-sm text-gray-500">{plan.description}</p>
-          </div>
+              {/* Price + aside */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between w-full mb-4">
+                <div>
+                  <p className="text-3xl font-bold">{plan.price}</p>
+                  <p className="text-sm text-gray-500">{plan.description}</p>
+                </div>
 
-        </div>
+              </div>
 
-        {/* Features */}
-        <ul className="mb-6 space-y-2">
-          {commonFeatures.map((feature, i) => (
-            <li key={i} className="text-gray-700">{feature}</li>
+              {/* Features */}
+              <ul className="mb-6 space-y-2">
+                {commonFeatures.map((feature, i) => (
+                  <li key={i} className="text-gray-700">{feature}</li>
+                ))}
+              </ul>
+
+            </Card>
           ))}
-        </ul>
-
-      </Card>
-    ))}
-  </div>
-</div>
-
-
-
+        </div>
+      </div>
 
 
       <div className="relative flex justify-center items-center my-24">
@@ -149,8 +146,10 @@ function App() {
           <h1 className="relative z-10 text-4xl md:text-5xl text-center p-12 bg-white/10 backdrop-blur-md rounded-3xl max-w-4xl">
             What are you waiting for?
           </h1>
-
-          Download
+        <Button size="lg" className="text-sm flex items-center gap-2">
+          <img src={AppleLogo} alt="Apple" className="max-h-4 w-auto" />
+          Download for iOS
+        </Button>
         </div>
       </div>
 

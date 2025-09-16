@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Logo from "../logo.png"
+import AppleLogo from "../assets/apple.png"
 import { Button } from "@/components/ui/button"
 
 
@@ -36,10 +37,11 @@ export default function Component() {
 
       {/* Right: Action Buttons */}
       <div className="flex items-center gap-2">
-
-        <Button size="sm" className="text-sm">
+        <Button size="sm" className="text-sm flex items-center gap-2">
+          <img src={AppleLogo} alt="Apple" className="max-h-4 w-auto" />
           Download
         </Button>
+
       </div>
     </div>
   </header>
