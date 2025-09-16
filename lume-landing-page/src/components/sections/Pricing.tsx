@@ -2,13 +2,10 @@ import { Card } from "../ui/card";
 
 
 function Pricing(){
-  
   const commonFeatures = [
+    "Strict Mode",
     "Track usage",
     "Custom blocks",
-    "Advanced reports",
-    "Team sharing",
-    "Priority support",
   ];
 
   const pricingPlans = [
@@ -19,7 +16,8 @@ function Pricing(){
 
     return(
         <div className="flex flex-col justify-center items-center relative p-24">
-            <h2 className="text-4xl font-bold mb-12 text-center">Make Focusing Easier</h2>
+
+            <h2 className="text-4xl font-semibold mb-12 text-center">Make Focusing Easier</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-4">
             {pricingPlans.map((plan, idx) => (

@@ -15,7 +15,7 @@ export default function Component() {
       {/* Left: Logo + Name */}
       <div className="flex items-center gap-2">
         <img src={Logo} alt="Logo" className="h-8 w-auto" />
-        <span className="text-xl font-bold text-primary">Lume</span>
+        <span className="text-xl font-medium text-primary">Lume</span>
       </div>
 
       {/* Center: Nav Links */}
