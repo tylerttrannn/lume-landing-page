@@ -5,9 +5,9 @@ import "./index.css";
 
 
 
-import img1 from "../src/assets/reason1.jpg";
-import img2 from "../src/assets/reason2.jpg";
-import img3 from "../src/assets/reason3.jpg";
+import img1 from "../src/assets/reason1.png";
+import img2 from "../src/assets/reason2.png";
+import img3 from "../src/assets/reason3.png";
 import { Card } from "./components/ui/card";
 
 function App() {
