@@ -1,4 +1,4 @@
-import { useState, type SetStateAction } from "react";
+import { useState } from "react";
 import Logo from "../logo.png";
 import AppleLogo from "../assets/apple.png";
 import { Button } from "@/components/ui/button";
