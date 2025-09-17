@@ -1,4 +1,3 @@
-import Navbar from "../../src/components/comp-577";
 
 function Terms() {
   return (
