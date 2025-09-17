@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 import Logo from "../logo.png";
 import AppleLogo from "../assets/apple.png";
 import { Button } from "@/components/ui/button";
@@ -7,19 +8,26 @@ const navigationLinks = [
   { label: "Home", id: "home" },
   { label: "Features", id: "features" },
   { label: "Pricing", id: "pricing" },
+  { label: "Support", id: "support" },
 ];
 
 export default function Component() {
   const [activeLink, setActiveLink] = useState("Home");
+  const navigate = useNavigate(); // hook to navigate
 
   const handleScroll = (id: string, label: string) => {
+    if (id === "support") {
+      navigate("/support"); 
+      setActiveLink(label);
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setActiveLink(label);
     }
   };
-
 
   return (
     <header className="fixed top-6 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl z-50 backdrop-blur-md bg-white/80 shadow-xl rounded-xl border border-gray-200 px-6">
