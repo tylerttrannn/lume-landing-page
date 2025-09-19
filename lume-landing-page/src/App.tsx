@@ -4,6 +4,7 @@ import Privacy from './views/Privacy';
 import Terms from './views/Terms';
 import Support from './views/Support';
 import Reset from './views/Reset';
+import Success from './views/Success';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Route path="/terms" element={<Terms/>} />
       <Route path="/support" element={<Support/>} />
       <Route path="/reset-password" element={<Reset />} /> 
+      <Route path="/sucess" element={<Success />} /> 
+
     </Routes>
   )
 }

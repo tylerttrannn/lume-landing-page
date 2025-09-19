@@ -1,65 +1,60 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"
-import { createClient } from '@supabase/supabase-js';
+import { Input } from "@/components/ui/input";
+import { createClient } from "@supabase/supabase-js";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-const navigate = useNavigate();
-
-async function verifyPasswords(password1: string, password2: string): Promise<boolean> {
-    if (password1 !== password2) {
-        return false;
-    }
-
-    const { data, error } = await supabase.auth.updateUser({ password: password1 });
-    if (error) {
-        console.error(error);
-        return false;
-    }
-
-    return true;
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error("Missing Supabase environment variables");
 }
 
-function Reset() {
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    const handleSubmit = async () => {
-        const success = await verifyPasswords(password, confirmPassword);
-        if (success) {
-            alert('Password updated!');
-            navigate("/success");
-        } else {
-            alert('Passwords do not match or update failed.');
-        }
+function Reset() {
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async () => {
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
     }
 
-    return (
-        <div className="flex flex-col justify-center items-center">
-            <h1>Reset Password</h1>
-            <div className="flex flex-col space-y-2">
-                <Input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
-                />
-                <Input
-                    type="password"
-                    placeholder="Confirm Password"
-                    value={confirmPassword}
-                    onChange={e => setConfirmPassword(e.target.value)}
-                />
-            </div>
-            <Button variant="outline" onClick={handleSubmit}>
-                Submit
-            </Button>
-        </div>
-    );
+    const { error } = await supabase.auth.updateUser({ password });
+    if (error) {
+      alert("Update failed: " + error.message);
+    } else {
+      alert("Password updated!");
+      navigate("/success");
+    }
+  };
+
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <h1>Reset Password</h1>
+      <div className="flex flex-col space-y-2">
+        <Input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Input
+          type="password"
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+      </div>
+      <Button variant="outline" onClick={handleSubmit}>
+        Submit
+      </Button>
+    </div>
+  );
 }
 
 export default Reset;
