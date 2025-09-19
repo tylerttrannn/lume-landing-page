@@ -14,8 +14,7 @@ function App() {
       <Route path="/terms" element={<Terms/>} />
       <Route path="/support" element={<Support/>} />
       <Route path="/reset-password" element={<Reset />} /> 
-      <Route path="/sucess" element={<Success />} /> 
-
+      <Route path="/success" element={<Success />} /> 
     </Routes>
   )
 }
