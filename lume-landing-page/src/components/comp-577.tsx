@@ -57,12 +57,30 @@ export default function Component() {
 
         {/* Right: Action Buttons */}
         <div className="flex items-center gap-2">
-          <Button size="sm" className="text-sm flex items-center gap-2">
-            <img src={AppleLogo} alt="Apple" className="max-h-4 w-auto" />
-            Download
-          </Button>
+            <Button asChild size="sm" className="text-sm flex items-center gap-2">
+              <a
+                href="https://apps.apple.com/us/app/lume/id6748434678"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={AppleLogo} alt="Apple" className="max-h-4 w-auto" />
+                Download
+              </a>
+            </Button>
         </div>
       </div>
     </header>
   );
 }
+
+
+            <Button asChild size="lg" className="text-sm flex items-center gap-2">
+              <a
+                href="https://apps.apple.com/us/app/lume/id6748434678"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={AppleLogo} alt="Apple" className="max-h-4 w-auto" />
+                Download for iOS
+              </a>
+            </Button>

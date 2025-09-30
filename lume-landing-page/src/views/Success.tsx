@@ -1,5 +1,4 @@
 import { CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 function Success() {
 
@@ -21,8 +20,6 @@ function Success() {
           <p className="text-gray-600 mb-8 leading-relaxed">
             Your password has been successfully updated. You can now sign in with your new credentials.
           </p>
-
-
 
           {/* Helper Text */}
           <p className="text-xs text-gray-500">

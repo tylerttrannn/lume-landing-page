@@ -21,9 +21,15 @@ function Main() {
           </p>
 
           <div className="flex justify-center md:justify-start">
-            <Button size="lg" className="text-sm flex items-center gap-2">
-              <img src={AppleLogo} alt="Apple" className="max-h-4 w-auto" />
-              Download for iOS
+            <Button asChild size="lg" className="text-sm flex items-center gap-2">
+              <a
+                href="https://apps.apple.com/us/app/lume/id6748434678"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={AppleLogo} alt="Apple" className="max-h-4 w-auto" />
+                Download for iOS
+              </a>
             </Button>
           </div>
         </div>

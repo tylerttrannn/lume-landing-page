@@ -18,23 +18,29 @@ function Privacy() {
             <strong>Study Habit Data:</strong> Stored locally on your device. You may 
             choose to share it with friends you accept.
           </li>
+
+          {/*
           <li>
             <strong>Optional Survey Data:</strong> Responses you provide in the survey. 
             These responses are <strong>anonymous</strong> and not tied to your name or account.
-          </li>
+          </li>          
+          
+          */}
+
         </ul>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">2. How We Use Information</h2>
         <p className="mb-4">
           Study habit data is used to provide you with personalized insights and, if you choose, 
-          to share with approved friends. Survey data is used solely for analytics and improving the app. 
+          to share with approved friends. {/*Survey data is used solely for analytics and improving the app.  */}
           We do not sell or share any of this information with third parties.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">3. Sharing of Information</h2>
         <p className="mb-4">
           Study habit data is private by default. You can choose to share it with friends you approve. 
-          Optional survey data is <strong>anonymous</strong> and never shared with anyone.
+          
+          {/*Optional survey data is <strong>anonymous</strong> and never shared with anyone.*/}
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">4. Data Deletion</h2>
